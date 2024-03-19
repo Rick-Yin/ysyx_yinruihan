@@ -1,7 +1,7 @@
 # PATH SET
 NVB := $(shell echo $$NVBOARD_HOME)
-TOPNAME = switch
-NXDC_FILES = constr/switch.nxdc
+TOPNAME = top
+NXDC_FILES = constr/top.nxdc
 
 VERILATOR = verilator
 VERILATOR_CFLAGS += -MMD --build -cc  \
@@ -12,11 +12,10 @@ OBJ_DIR = $(BUILD_DIR)/obj_dir
 BIN = $(BUILD_DIR)/$(TOPNAME)
 
 
-all:
-	@echo "Write this Makefile by your self."
-	@echo $(NVB)/
+all: $(BIN)
+	@echo "Record the learning process!"
+	$(call git_commit, "sim RTL") # DO NOT REMOVE THIS LINE!!!
 
-test: $(BIN)
 $(shell mkdir -p $(BUILD_DIR))
 
 # constraint file
@@ -46,17 +45,6 @@ $(BIN): $(VSRCS) $(CSRCS) $(NVBOARD_ARCHIVE)
 run: $(BIN)
 	@$^
 
-
-sim:
-	@echo "Record the learning process!"
-	$(call git_commit, "sim RTL") # DO NOT REMOVE THIS LINE!!!
-
-
-wave:
-	@echo "-------- Compile -------------"
-	verilator -Wall --cc --exe --trace --build -j top.v sim_main.cpp
-	obj_dir/Vtop
-	gtkwave obj_dir/waveform.vcd
 
 
 include ../../../Makefile
