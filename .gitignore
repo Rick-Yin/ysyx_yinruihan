@@ -10,9 +10,9 @@
 !README.md
 !.gitignore
 !init.sh
-!PA0/*/constr/*
-!PA0/*/csrc/*
-!PA0/*/vsrc/*
+!/PA0/*/constr/*
+!/PA0/*/csrc/*
+!/PA0/*/vsrc/*
 /fceux-am
 /nvboard
 **/build/
