@@ -1,0 +1,9 @@
+top=mux4x1_2bit
+
+sel (SW0, SW1)
+in1 (SW2, SW3)
+in2 (SW4, SW5)
+in3 (SW6, SW7)
+in4 (SW8, SW9)
+
+out (LD0, LD1)
