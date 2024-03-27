@@ -10,6 +10,7 @@
 !README.md
 !.gitignore
 !init.sh
+!/PA0
 /fceux-am
 /nvboard
 **/build/
