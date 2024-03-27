@@ -11,7 +11,7 @@
 !.gitignore
 !init.sh
 !/PA0/*/constr/*
-!/PA0/*/csrc/*
+!*/csrc/*
 !/PA0/*/vsrc/*
 /fceux-am
 /nvboard
